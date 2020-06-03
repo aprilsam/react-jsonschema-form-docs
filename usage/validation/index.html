@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Validation - react-jsonschema-form documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="https://assets.readthedocs.org/static/css/badge_only.css" rel="stylesheet" />
+  <link href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Validation";
+    var mkdocs_page_input_path = "usage/validation.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../index.html" class="icon icon-home"> react-jsonschema-form documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="https://react-jsonschema-form.readthedocs.io/en/latest/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../index.html">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quickstart</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">JSON schema</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../single/index.html">Single fields</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../objects/index.html">Objects</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../arrays/index.html">Arrays</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../definitions/index.html">Definitions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../dependencies/index.html">Dependencies</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../oneof/index.html">oneOf / anyOf / allOf</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Usage</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../widgets/index.html">Widgets</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../themes/index.html">Themes</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="index.html">Validation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="index.html#live-validation">Live validation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="index.html#html5-validation">HTML5 Validation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="index.html#custom-validation-rules">Custom validation rules</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="index.html#custom-error-messages">Custom error messages</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="index.html#error-list-display">Error List Display</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="index.html#the-case-of-empty-strings">The case of empty strings</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="index.html#custom-meta-schema-validation">Custom meta schema validation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="index.html#additionalmetaschemas">additionalMetaSchemas</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="index.html#customformats">customFormats</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="index.html#async-validation">Async validation</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Advanced Customization</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../advanced-customization/custom-widgets-fields/index.html">Custom Widgets and Fields</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../advanced-customization/custom-templates/index.html">Custom Templates</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../advanced-customization/custom-themes/index.html">Custom Themes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../advanced-customization/internals/index.html">Other Internals</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../contributing/index.html">Contributing</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Reference</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../api-reference/uiSchema/index.html">uiSchema</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../api-reference/form-props/index.html">&lt;Form /&gt; props</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">react-jsonschema-form documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Usage &raquo;</li>
+        
+      
+    
+    <li>Validation</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="validation">Validation<a class="headerlink" href="index.html#validation" title="Permanent link">&para;</a></h1>
+<p>When the form is submitted, the form data is validated to conform to the given JSON schema; this library uses the <a href="https://github.com/epoberezkin/ajv">ajv</a> validator by default.</p>
+<h2 id="live-validation">Live validation<a class="headerlink" href="index.html#live-validation" title="Permanent link">&para;</a></h2>
+<p>By default, form data are only validated when the form is submitted or when a new <code>formData</code> prop is passed to the <code>Form</code> component.</p>
+<p>You can enable live form data validation by passing a <code>liveValidate</code> prop to the <code>Form</code> component, and set it to <code>true</code>. Then, every time a value changes within the form data tree (e.g. the user entering a character in a field), a validation operation is performed, and the validation results are reflected into the form state.</p>
+<p>Be warned that this is an expensive strategy, with possibly strong impact on performances.</p>
+<pre><code class="jsx">const schema = {
+  type: [&quot;string&quot;],
+  const: &quot;test&quot;
+};
+
+const formData = &quot;a&quot;;
+
+render((
+  &lt;Form schema={schema} formData={formData} liveValidate /&gt;
+), document.getElementById(&quot;app&quot;));
+</code></pre>
+
+<h2 id="html5-validation">HTML5 Validation<a class="headerlink" href="index.html#html5-validation" title="Permanent link">&para;</a></h2>
+<p>By default, the form uses HTML5 validation. This may cause unintuitive results because the HTML5 validation errors (such as when a field is <code>required</code>) may be displayed before the form is submitted, and thus these errors will display differently from the react-jsonschema-form validation errors. You can turn off HTML validation by setting the <code>noHtml5Validate</code> to <code>true</code>.</p>
+<pre><code class="jsx">const schema = {
+  type: &quot;object&quot;,
+  properties: {
+    name: {
+      type: &quot;string&quot;,
+      required: true
+    }
+  }
+};
+
+render((
+  &lt;Form schema={schema} noHtml5Validate /&gt;
+), document.getElementById(&quot;app&quot;));
+</code></pre>
+
+<h2 id="custom-validation-rules">Custom validation rules<a class="headerlink" href="index.html#custom-validation-rules" title="Permanent link">&para;</a></h2>
+<p>Form data is always validated against the JSON schema.</p>
+<p>But it is possible to define your own custom validation rules. This is especially useful when the validation depends on several interdependent fields.</p>
+<pre><code class="jsx">function validate(formData, errors) {
+  if (formData.pass1 !== formData.pass2) {
+    errors.pass2.addError(&quot;Passwords don't match&quot;);
+  }
+  return errors;
+}
+
+const schema = {
+  type: &quot;object&quot;,
+  properties: {
+    pass1: {type: &quot;string&quot;, minLength: 3},
+    pass2: {type: &quot;string&quot;, minLength: 3},
+  }
+};
+
+render((
+  &lt;Form schema={schema}
+        validate={validate} /&gt;
+), document.getElementById(&quot;app&quot;));
+</code></pre>
+
+<blockquote>
+<p>Notes:
+- The <code>validate()</code> function must <strong>always</strong> return the <code>errors</code> object
+  received as second argument.
+- The <code>validate()</code> function is called <strong>after</strong> the JSON schema validation.</p>
+</blockquote>
+<h2 id="custom-error-messages">Custom error messages<a class="headerlink" href="index.html#custom-error-messages" title="Permanent link">&para;</a></h2>
+<p>Validation error messages are provided by the JSON Schema validation by default. If you need to change these messages or make any other modifications to the errors from the JSON Schema validation, you can define a transform function that receives the list of JSON Schema errors and returns a new list.</p>
+<pre><code class="jsx">function transformErrors(errors) {
+  return errors.map(error =&gt; {
+    if (error.name === &quot;pattern&quot;) {
+      error.message = &quot;Only digits are allowed&quot;
+    }
+    return error;
+  });
+}
+
+const schema = {
+  type: &quot;object&quot;,
+  properties: {
+    onlyNumbersString: {type: &quot;string&quot;, pattern: &quot;^\\d*$&quot;},
+  }
+};
+
+render((
+  &lt;Form schema={schema}
+        transformErrors={transformErrors} /&gt;
+), document.getElementById(&quot;app&quot;));
+</code></pre>
+
+<blockquote>
+<p>Notes:
+- The <code>transformErrors()</code> function must return the list of errors. Modifying the list in place without returning it will result in an error.</p>
+</blockquote>
+<p>Each element in the <code>errors</code> list passed to <code>transformErrors</code> has the following properties:</p>
+<ul>
+<li><code>name</code>: name of the error, for example, "required" or "minLength"</li>
+<li><code>message</code>: message, for example, "is a required property" or "should NOT be shorter than 3 characters"</li>
+<li><code>params</code>: an object with the error params returned by ajv (<a href="https://github.com/epoberezkin/ajv/tree/6a671057ea6aae690b5967ee26a0ddf8452c6297#error-parameters">see doc</a> for more info).</li>
+<li><code>property</code>: a string in Javascript property accessor notation to the data path of the field with the error. For example, <code>.name</code> or <code>['first-name']</code>.</li>
+<li><code>stack</code>: full error name, for example ".name is a required property".</li>
+<li><code>schemaPath</code>: JSON pointer to the schema of the keyword that failed validation. For example, <code>#/fields/firstName/required</code>. (Note: this may sometimes be wrong due to a <a href="https://react-jsonschema-form.readthedocs.io/en/latest/usage/validation/bug&#32;in&#32;ajv">https://github.com/epoberezkin/ajv/issues/512</a>).</li>
+</ul>
+<h2 id="error-list-display">Error List Display<a class="headerlink" href="index.html#error-list-display" title="Permanent link">&para;</a></h2>
+<p>To take control over how the form errors are displayed, you can define an <em>error list template</em> for your form. This list is the form global error list that appears at the top of your forms.</p>
+<p>An error list template is basically a React stateless component being passed errors as props so you can render them as you like:</p>
+<pre><code class="jsx">function ErrorListTemplate(props) {
+  const { errors } = props;
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;Custom error list&lt;/h2&gt;
+      &lt;ul&gt;
+        {errors.map(error =&gt; (
+            &lt;li key={error.stack}&gt;
+              {error.stack}
+            &lt;/li&gt;
+          ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+
+const schema = {
+  type: &quot;string&quot;,
+  const: &quot;test&quot;
+};
+
+render((
+  &lt;Form schema={schema}
+        showErrorList={true}
+        formData={&quot;&quot;}
+        liveValidate
+        ErrorList={ErrorListTemplate} /&gt;
+), document.getElementById(&quot;app&quot;));
+</code></pre>
+
+<blockquote>
+<p>Note: Your custom <code>ErrorList</code> template will only render when <code>showErrorList</code> is <code>true</code>.</p>
+</blockquote>
+<p>The following props are passed to <code>ErrorList</code></p>
+<ul>
+<li><code>errors</code>: An array of the errors.</li>
+<li><code>errorSchema</code>: The errorSchema constructed by <code>Form</code>.</li>
+<li><code>schema</code>: The schema that was passed to <code>Form</code>.</li>
+<li><code>uiSchema</code>: The uiSchema that was passed to <code>Form</code>.</li>
+<li><code>formContext</code>: The <code>formContext</code> object that you passed to Form.</li>
+</ul>
+<h2 id="the-case-of-empty-strings">The case of empty strings<a class="headerlink" href="index.html#the-case-of-empty-strings" title="Permanent link">&para;</a></h2>
+<p>When a text input is empty, the field in form data is set to <code>undefined</code>. String fields that use <code>enum</code> and a <code>select</code> widget will have an empty option at the top of the options list that when selected will result in the field being <code>undefined</code>.</p>
+<p>One consequence of this is that if you have an empty string in your <code>enum</code> array, selecting that option in the <code>select</code> input will cause the field to be set to <code>undefined</code>, not an empty string.</p>
+<p>If you want to have the field set to a default value when empty you can provide a <code>ui:emptyValue</code> field in the <code>uiSchema</code> object.</p>
+<h2 id="custom-meta-schema-validation">Custom meta schema validation<a class="headerlink" href="index.html#custom-meta-schema-validation" title="Permanent link">&para;</a></h2>
+<p>To have your schemas validated against any other meta schema than draft-07 (the current version of <a href="http://json-schema.org/">JSON Schema</a>), make sure your schema has a <code>$schema</code> attribute that enables the validator to use the correct meta schema. For example:</p>
+<pre><code class="json">{
+  &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
+  ...
+}
+</code></pre>
+
+<p>Note that react-jsonschema-form only supports the latest version of JSON Schema, draft-07, by default. To support additional meta schemas pass them through the <code>additionalMetaSchemas</code> prop to the <code>Form</code> component.</p>
+<h3 id="additionalmetaschemas">additionalMetaSchemas<a class="headerlink" href="index.html#additionalmetaschemas" title="Permanent link">&para;</a></h3>
+<p>The <code>additionalMetaSchemas</code> prop allows you to validate the form data against one (or more than one) JSON Schema meta schema, for example, JSON Schema draft-04. You can import a meta schema as follows:</p>
+<pre><code class="jsx">const metaSchemaDraft04 = require(&quot;ajv/lib/refs/json-schema-draft-04.json&quot;);
+</code></pre>
+
+<p>In this example <code>schema</code> passed as props to <code>Form</code> component can be validated against draft-07 (default) and by draft-04 (added), depending on the value of <code>$schema</code> attribute.</p>
+<pre><code class="jsx">const schema = {
+  &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
+  type: &quot;string&quot;
+};
+
+return (&lt;Form schema={schema} 
+  additionalMetaSchemas={[metaSchemaDraft04]} /&gt;);
+</code></pre>
+
+<h2 id="customformats">customFormats<a class="headerlink" href="index.html#customformats" title="Permanent link">&para;</a></h2>
+<p><a href="https://json-schema.org/draft/2019-09/json-schema-validation.html#rfc.section.7">Pre-defined semantic formats</a> are limited. react-jsonschema-form adds two formats, <code>color</code> and <code>data-url</code>, to support certain <a href="../widgets/index.html">alternative widgets</a>. You can add formats of your own through the <code>customFormats</code> prop to your <code>Form</code> component:</p>
+<pre><code class="jsx">const schema = {
+  type: 'string',
+  format: 'phone-us'
+};
+
+const customFormats = {
+  'phone-us': /\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}$/
+};
+
+render((
+  &lt;Form schema={schema} 
+        customFormats={customFormats}/&gt;
+), document.getElementById(&quot;app&quot;));
+</code></pre>
+
+<p>Format values can be anything AJV’s <a href="https://github.com/epoberezkin/ajv/tree/6a671057ea6aae690b5967ee26a0ddf8452c6297#addformatstring-name-stringregexpfunctionobject-format---ajv"><code>addFormat</code> method</a> accepts.</p>
+<h2 id="async-validation">Async validation<a class="headerlink" href="index.html#async-validation" title="Permanent link">&para;</a></h2>
+<p>Handling async errors is an important part of many applications. Support for this is added in the form of the <code>extraErrors</code> prop.</p>
+<p>For example, a request could be made to some backend when the user submits the form. If that request fails, the errors returned by the backend should be formatted like in the following example.</p>
+<pre><code class="jsx">const schema = {
+  type: &quot;object&quot;,
+  properties: {
+    foo: {
+      type: &quot;string&quot;,
+    },
+    candy: {
+      type: &quot;object&quot;,
+      properties: {
+        bar: {
+          type: &quot;string&quot;,
+        }
+      }
+    }
+  }
+};
+
+const extraErrors = {
+  foo: {
+    __errors: [&quot;some error that got added as a prop&quot;],
+  },
+  candy: {
+    bar: {
+    __errors: [&quot;some error that got added as a prop&quot;],
+    }
+  }
+};
+
+render((
+  &lt;Form schema={schema}
+        extraErrors={extraErrors} /&gt;,
+), document.getElementById(&quot;app&quot;));
+</code></pre>
+
+<p>An important note is that these errors are "display only" and will not block the user from submitting the form again.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../advanced-customization/custom-widgets-fields/index.html" class="btn btn-neutral float-right" title="Custom Widgets and Fields">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../themes/index.html" class="btn btn-neutral" title="Themes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../themes/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../advanced-customization/custom-widgets-fields/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../main.js" defer></script>
+      <script src="../../readthedocs-data.js" defer></script>
+      <script src="https://assets.readthedocs.org/static/core/js/readthedocs-doc-embed.js" defer></script>
+      <script src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

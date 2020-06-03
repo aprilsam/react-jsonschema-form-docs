@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Custom Templates - react-jsonschema-form documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="https://assets.readthedocs.org/static/css/badge_only.css" rel="stylesheet" />
+  <link href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Custom Templates";
+    var mkdocs_page_input_path = "advanced-customization/custom-templates.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../index.html" class="icon icon-home"> react-jsonschema-form documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="https://react-jsonschema-form.readthedocs.io/en/latest/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../index.html">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quickstart</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">JSON schema</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/single/index.html">Single fields</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/objects/index.html">Objects</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/arrays/index.html">Arrays</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/definitions/index.html">Definitions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/dependencies/index.html">Dependencies</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/oneof/index.html">oneOf / anyOf / allOf</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Usage</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/widgets/index.html">Widgets</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/themes/index.html">Themes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/validation/index.html">Validation</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Advanced Customization</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../custom-widgets-fields/index.html">Custom Widgets and Fields</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="index.html">Custom Templates</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="index.html#arrayfieldtemplate">ArrayFieldTemplate</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="index.html#fieldtemplate">FieldTemplate</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="index.html#objectfieldtemplate">ObjectFieldTemplate</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../custom-themes/index.html">Custom Themes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../internals/index.html">Other Internals</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../contributing/index.html">Contributing</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Reference</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../api-reference/uiSchema/index.html">uiSchema</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../api-reference/form-props/index.html">&lt;Form /&gt; props</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">react-jsonschema-form documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Advanced Customization &raquo;</li>
+        
+      
+    
+    <li>Custom Templates</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="custom-templates">Custom Templates<a class="headerlink" href="index.html#custom-templates" title="Permanent link">&para;</a></h1>
+<p>This is an advanced feature that lets you customize even more aspects of the form:</p>
+<table>
+<thead>
+<tr>
+<th>_</th>
+<th>Custom Field</th>
+<th>Custom Template</th>
+<th>Custom Widget</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>What it does</strong></td>
+<td>Overrides all behaviour</td>
+<td>Overrides just the layout (not behaviour)</td>
+<td>Overrides just the input box (not layout, labels, or help, or validation)</td>
+</tr>
+<tr>
+<td><strong>Usage</strong></td>
+<td>Global or per-field</td>
+<td>Global or per-field</td>
+<td>Global or per-field</td>
+</tr>
+<tr>
+<td><strong>Global Example</strong></td>
+<td><code>&lt;Form fields={MyCustomField} /&gt;</code></td>
+<td><code>&lt;Form ArrayFieldTemplate={MyArrayTemplate} /&gt;</code></td>
+<td><code>&lt;Form widgets={MyCustomWidget} /&gt;</code></td>
+</tr>
+<tr>
+<td><strong>Per-Field Example</strong></td>
+<td><code>"ui:field": MyCustomField</code></td>
+<td><code>"ui:ArrayFieldTemplate": MyArrayTemplate</code></td>
+<td><code>"ui:widget":MyCustomWidget</code></td>
+</tr>
+<tr>
+<td><strong>Documentation</strong></td>
+<td><a href="../custom-widgets-fields/index.html">Custom Fields</a></td>
+<td><a href="index.html#FieldTemplate">FieldTemplate</a> / <a href="index.html#ArrayFieldTemplate">ArrayFieldTemplate</a> / <a href="index.html#ObjectFieldTemplate">ObjectFieldTemplate</a></td>
+<td><a href="../custom-widgets-fields/index.html">Custom Widgets</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="arrayfieldtemplate">ArrayFieldTemplate<a class="headerlink" href="index.html#arrayfieldtemplate" title="Permanent link">&para;</a></h2>
+<p>You can use an <code>ArrayFieldTemplate</code> to customize how your arrays are rendered.
+This allows you to customize your array, and each element in the array.</p>
+<pre><code class="jsx">const schema = {
+  type: &quot;array&quot;,
+  items: {
+    type: &quot;string&quot;
+  }
+};
+
+function ArrayFieldTemplate(props) {
+  return (
+    &lt;div&gt;
+      {props.items.map(element =&gt; element.children)}
+      {props.canAdd &amp;&amp; &lt;button type=&quot;button&quot; onClick={props.onAddClick}&gt;&lt;/button&gt;}
+    &lt;/div&gt;
+  );
+}
+
+render((
+  &lt;Form schema={schema}
+        ArrayFieldTemplate={ArrayFieldTemplate} /&gt;,
+), document.getElementById(&quot;app&quot;));
+</code></pre>
+
+<p>You also can provide your own field template to a uiSchema by specifying a <code>ui:ArrayFieldTemplate</code> property.</p>
+<pre><code class="js">const uiSchema = {
+  &quot;ui:ArrayFieldTemplate&quot;: ArrayFieldTemplate
+}
+</code></pre>
+
+<p>Please see <a href="https://github.com/rjsf-team/react-jsonschema-form/blob/4542cd254ffdc6dfaf55e8c9f6f17dc900d0d041/packages/playground/src/samples/customArray.js">customArray.js</a> for another example.</p>
+<p>The following props are passed to each <code>ArrayFieldTemplate</code>:</p>
+<ul>
+<li><code>DescriptionField</code>: The <code>DescriptionField</code> from the registry (in case you wanted to utilize it)</li>
+<li><code>TitleField</code>: The <code>TitleField</code> from the registry (in case you wanted to utilize it).</li>
+<li><code>canAdd</code>: A boolean value stating whether new elements can be added to the array.</li>
+<li><code>className</code>: The className string.</li>
+<li><code>disabled</code>: A boolean value stating if the array is disabled.</li>
+<li><code>idSchema</code>: Object</li>
+<li><code>items</code>: An array of objects representing the items in the array. Each of the items represent a child with properties described below.</li>
+<li><code>onAddClick: (event?) =&gt; void</code>: A function that adds a new item to the array.</li>
+<li><code>readonly</code>: A boolean value stating if the array is read-only.</li>
+<li><code>required</code>: A boolean value stating if the array is required.</li>
+<li><code>schema</code>: The schema object for this array.</li>
+<li><code>uiSchema</code>: The uiSchema object for this array field.</li>
+<li><code>title</code>: A string value containing the title for the array.</li>
+<li><code>formContext</code>: The <code>formContext</code> object that you passed to Form.</li>
+<li><code>formData</code>: The formData for this array.</li>
+<li><code>registry</code>: The <code>registry</code> object.</li>
+</ul>
+<p>The following props are part of each element in <code>items</code>:</p>
+<ul>
+<li><code>children</code>: The html for the item's content.</li>
+<li><code>className</code>: The className string.</li>
+<li><code>disabled</code>: A boolean value stating if the array item is disabled.</li>
+<li><code>hasMoveDown</code>: A boolean value stating whether the array item can be moved down.</li>
+<li><code>hasMoveUp</code>: A boolean value stating whether the array item can be moved up.</li>
+<li><code>hasRemove</code>: A boolean value stating whether the array item can be removed.</li>
+<li><code>hasToolbar</code>: A boolean value stating whether the array item has a toolbar.</li>
+<li><code>index</code>: A number stating the index the array item occurs in <code>items</code>.</li>
+<li><code>key</code>: A stable, unique key for the array item.</li>
+<li><code>onAddIndexClick: (index) =&gt; (event) =&gt; void</code>: Returns a function that adds a new item at <code>index</code>.</li>
+<li><code>onDropIndexClick: (index) =&gt; (event) =&gt; void</code>: Returns a function that removes the item at <code>index</code>.</li>
+<li><code>onReorderClick: (index, newIndex) =&gt; (event) =&gt; void</code>: Returns a function that swaps the items at <code>index</code> with <code>newIndex</code>.</li>
+<li><code>readonly</code>: A boolean value stating if the array item is read-only.</li>
+</ul>
+<blockquote>
+<p>Note: Array and object field templates are always rendered inside of the FieldTemplate. To fully customize an array field template, you may need to specify both <code>ui:FieldTemplate</code> and <code>ui:ArrayFieldTemplate</code>.</p>
+</blockquote>
+<h2 id="fieldtemplate">FieldTemplate<a class="headerlink" href="index.html#fieldtemplate" title="Permanent link">&para;</a></h2>
+<p>To take control over the inner organization of each field (each form row), you can define a <em>field template</em> for your form.</p>
+<p>A field template is basically a React stateless component being passed field-related props, allowing you to structure your form row as you like.</p>
+<pre><code class="jsx">const schema = {
+  type: &quot;string&quot;
+};
+
+function CustomFieldTemplate(props) {
+  const {id, classNames, label, help, required, description, errors, children} = props;
+  return (
+    &lt;div className={classNames}&gt;
+      &lt;label htmlFor={id}&gt;{label}{required ? &quot;*&quot; : null}&lt;/label&gt;
+      {description}
+      {children}
+      {errors}
+      {help}
+    &lt;/div&gt;
+  );
+}
+
+render((
+  &lt;Form schema={schema}
+        FieldTemplate={CustomFieldTemplate} /&gt;,
+), document.getElementById(&quot;app&quot;));
+</code></pre>
+
+<p>You also can provide your own field template to a uiSchema by specifying a <code>ui:FieldTemplate</code> property.</p>
+<pre><code class="js">const uiSchema = {
+  &quot;ui:FieldTemplate&quot;: CustomFieldTemplate
+}
+</code></pre>
+
+<p>If you want to handle the rendering of each element yourself, you can use the props <code>rawHelp</code>, <code>rawDescription</code> and <code>rawErrors</code>.</p>
+<p>The following props are passed to a custom field template component:</p>
+<ul>
+<li><code>id</code>: The id of the field in the hierarchy. You can use it to render a label targeting the wrapped widget.</li>
+<li><code>classNames</code>: A string containing the base Bootstrap CSS classes, merged with any <a href="index.html#custom-css-class-names">custom ones</a> defined in your uiSchema.</li>
+<li><code>label</code>: The computed label for this field, as a string.</li>
+<li><code>description</code>: A component instance rendering the field description, if one is defined (this will use any <a href="index.html#custom-descriptions">custom <code>DescriptionField</code></a> defined).</li>
+<li><code>rawDescription</code>: A string containing any <code>ui:description</code> uiSchema directive defined.</li>
+<li><code>children</code>: The field or widget component instance for this field row.</li>
+<li><code>errors</code>: A component instance listing any encountered errors for this field.</li>
+<li><code>rawErrors</code>: An array of strings listing all generated error messages from encountered errors for this field.</li>
+<li><code>help</code>: A component instance rendering any <code>ui:help</code> uiSchema directive defined.</li>
+<li><code>rawHelp</code>: A string containing any <code>ui:help</code> uiSchema directive defined. <strong>NOTE:</strong> <code>rawHelp</code> will be <code>undefined</code> if passed <code>ui:help</code> is a React component instead of a string.</li>
+<li><code>hidden</code>: A boolean value stating if the field should be hidden.</li>
+<li><code>required</code>: A boolean value stating if the field is required.</li>
+<li><code>readonly</code>: A boolean value stating if the field is read-only.</li>
+<li><code>disabled</code>: A boolean value stating if the field is disabled.</li>
+<li><code>displayLabel</code>: A boolean value stating if the label should be rendered or not. This is useful for nested fields in arrays where you don't want to clutter the UI.</li>
+<li><code>fields</code>: An array containing all Form's fields including your <a href="index.html#custom-field-components">custom fields</a> and the built-in fields.</li>
+<li><code>schema</code>: The schema object for this field.</li>
+<li><code>uiSchema</code>: The uiSchema object for this field.</li>
+<li><code>formContext</code>: The <code>formContext</code> object that you passed to Form.</li>
+<li><code>registry</code>: The <code>registry</code> object.</li>
+</ul>
+<blockquote>
+<p>Note: you can only define a single global field template for a form, but you can set individual field templates per property using <code>"ui:FieldTemplate"</code>.</p>
+</blockquote>
+<h2 id="objectfieldtemplate">ObjectFieldTemplate<a class="headerlink" href="index.html#objectfieldtemplate" title="Permanent link">&para;</a></h2>
+<pre><code class="jsx">const schema = {
+  type: &quot;object&quot;,
+  title: &quot;Object title&quot;,
+  description: &quot;Object description&quot;,
+  properties: {
+    name: {
+      type: &quot;string&quot;
+    },
+    age: {
+      type: &quot;number&quot;
+    }
+  }
+};
+
+function ObjectFieldTemplate(props) {
+  return (
+    &lt;div&gt;
+      {props.title}
+      {props.description}
+      {props.properties.map(element =&gt; &lt;div className=&quot;property-wrapper&quot;&gt;{element.content}&lt;/div&gt;)}
+    &lt;/div&gt;
+  );
+}
+
+render((
+  &lt;Form schema={schema}
+        ObjectFieldTemplate={ObjectFieldTemplate} /&gt;,
+), document.getElementById(&quot;app&quot;));
+</code></pre>
+
+<p>You also can provide your own field template to a uiSchema by specifying a <code>ui:ObjectFieldTemplate</code> property.</p>
+<pre><code class="js">const uiSchema = {
+  &quot;ui:ObjectFieldTemplate&quot;: ObjectFieldTemplate
+};
+</code></pre>
+
+<p>Please see <a href="https://github.com/rjsf-team/react-jsonschema-form/blob/4542cd254ffdc6dfaf55e8c9f6f17dc900d0d041/packages/playground/src/samples/customObject.js">customObject.js</a> for a better example.</p>
+<p>The following props are passed to each <code>ObjectFieldTemplate</code>:</p>
+<ul>
+<li><code>DescriptionField</code>: The <code>DescriptionField</code> from the registry (in case you wanted to utilize it)</li>
+<li><code>TitleField</code>: The <code>TitleField</code> from the registry (in case you wanted to utilize it).</li>
+<li><code>title</code>: A string value containing the title for the object.</li>
+<li><code>description</code>: A string value containing the description for the object.</li>
+<li><code>disabled</code>: A boolean value stating if the object is disabled.</li>
+<li><code>properties</code>: An array of object representing the properties in the array. Each of the properties represent a child with properties described below.</li>
+<li><code>readonly</code>: A boolean value stating if the object is read-only.</li>
+<li><code>required</code>: A boolean value stating if the object is required.</li>
+<li><code>schema</code>: The schema object for this object.</li>
+<li><code>uiSchema</code>: The uiSchema object for this object field.</li>
+<li><code>idSchema</code>: An object containing the id for this object &amp; ids for it's properties.</li>
+<li><code>formData</code>: The form data for the object.</li>
+<li><code>formContext</code>: The <code>formContext</code> object that you passed to Form.</li>
+<li><code>registry</code>: The <code>registry</code> object.</li>
+</ul>
+<p>The following props are part of each element in <code>properties</code>:</p>
+<ul>
+<li><code>content</code>: The html for the property's content.</li>
+<li><code>name</code>: A string representing the property name.</li>
+<li><code>disabled</code>: A boolean value stating if the object property is disabled.</li>
+<li><code>readonly</code>: A boolean value stating if the property is read-only.</li>
+</ul>
+<blockquote>
+<p>Note: Array and object field templates are always rendered inside of the FieldTemplate. To fully customize an object field template, you may need to specify both <code>ui:FieldTemplate</code> and <code>ui:ObjectFieldTemplate</code>.</p>
+</blockquote>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../custom-themes/index.html" class="btn btn-neutral float-right" title="Custom Themes">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../custom-widgets-fields/index.html" class="btn btn-neutral" title="Custom Widgets and Fields"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../custom-widgets-fields/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../custom-themes/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../main.js" defer></script>
+      <script src="../../readthedocs-data.js" defer></script>
+      <script src="https://assets.readthedocs.org/static/core/js/readthedocs-doc-embed.js" defer></script>
+      <script src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

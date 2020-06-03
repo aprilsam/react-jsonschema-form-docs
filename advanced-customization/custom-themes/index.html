@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Custom Themes - react-jsonschema-form documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="https://assets.readthedocs.org/static/css/badge_only.css" rel="stylesheet" />
+  <link href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Custom Themes";
+    var mkdocs_page_input_path = "advanced-customization/custom-themes.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../index.html" class="icon icon-home"> react-jsonschema-form documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="https://react-jsonschema-form.readthedocs.io/en/latest/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../index.html">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quickstart</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">JSON schema</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/single/index.html">Single fields</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/objects/index.html">Objects</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/arrays/index.html">Arrays</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/definitions/index.html">Definitions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/dependencies/index.html">Dependencies</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/oneof/index.html">oneOf / anyOf / allOf</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Usage</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/widgets/index.html">Widgets</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/themes/index.html">Themes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/validation/index.html">Validation</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Advanced Customization</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../custom-widgets-fields/index.html">Custom Widgets and Fields</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../custom-templates/index.html">Custom Templates</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="index.html">Custom Themes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="index.html#usage">Usage</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="index.html#theme-object-properties">Theme object properties</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="index.html#widgets-and-fields">Widgets and fields</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="index.html#templates">Templates</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="index.html#overriding-other-form-props">Overriding other Form props</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../internals/index.html">Other Internals</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../contributing/index.html">Contributing</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Reference</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../api-reference/uiSchema/index.html">uiSchema</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../api-reference/form-props/index.html">&lt;Form /&gt; props</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">react-jsonschema-form documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Advanced Customization &raquo;</li>
+        
+      
+    
+    <li>Custom Themes</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="custom-themes">Custom Themes<a class="headerlink" href="index.html#custom-themes" title="Permanent link">&para;</a></h1>
+<p>The <code>withTheme</code> component provides an easy way to extend the functionality of react-jsonschema-form by passing in a theme object that defines custom/overridden widgets and fields, as well as any of the other possible properties of the standard rjsf <code>Form</code> component. This theme-defining object is passed as the only parameter to the HOC (<code>withTheme(ThemeObj)</code>), and the HOC will return a themed-component which you use instead of the standard <code>Form</code> component.</p>
+<h2 id="usage">Usage<a class="headerlink" href="index.html#usage" title="Permanent link">&para;</a></h2>
+<pre><code class="jsx">import React, { Component } from 'react';
+import { withTheme } from '@rjsf/core';
+
+const theme = { widgets: {test: () =&gt; (&lt;div&gt;test&lt;/div&gt;) } };
+
+const ThemedForm = withTheme(theme); 
+
+const Demo = () =&gt; (
+  &lt;ThemedForm schema={schema} uiSchema={uiSchema} /&gt;
+);
+</code></pre>
+
+<h2 id="theme-object-properties">Theme object properties<a class="headerlink" href="index.html#theme-object-properties" title="Permanent link">&para;</a></h2>
+<p>The Theme object consists of the same properties as the rjsf <code>Form</code> component (such as <strong>widgets</strong> and <strong>fields</strong>). The themed-Form component merges together any theme-specific <strong>widgets</strong> and <strong>fields</strong> with the default <strong>widgets</strong> and <strong>fields</strong>. For instance, providing a single widget in <strong>widgets</strong> will merge this widget with all the default widgets of the rjsf <code>Form</code> component, but overrides the default if the theme's widget's name matches the default widget's name. Thus, for each default widget or field not specified/overridden, the themed-form will rely on the defaults from the rjsf <code>Form</code>. Note that you are not required to pass in either custom <strong>widgets</strong> or <strong>fields</strong> when using the custom-themed HOC component; you can make the essentially redefine the default Form by simply doing <code>const Form = withTheme({});</code>.</p>
+<h3 id="widgets-and-fields">Widgets and fields<a class="headerlink" href="index.html#widgets-and-fields" title="Permanent link">&para;</a></h3>
+<p><strong>widgets</strong> and <strong>fields</strong> should be in the same format as shown <a href="https://react-jsonschema-form.readthedocs.io/advanced-customization/#custom-widgets-and-fields">here</a>.</p>
+<p>Example theme with custom widget:</p>
+<pre><code class="jsx">const MyCustomWidget = (props) =&gt; {
+  return (
+    &lt;input type=&quot;text&quot;
+      className=&quot;custom&quot;
+      value={props.value}
+      required={props.required}
+      onChange={(event) =&gt; props.onChange(event.target.value)} /&gt;
+  );
+};
+
+const myWidgets = {
+  myCustomWidget: MyCustomWidget
+};
+
+const ThemeObject = {widgets: myWidgets};
+export default ThemeObject;
+</code></pre>
+
+<p>The above can be similarly done for <strong>fields</strong>.</p>
+<h3 id="templates">Templates<a class="headerlink" href="index.html#templates" title="Permanent link">&para;</a></h3>
+<p>Each template should be passed directly into the theme object just as you would into the rjsf Form component. Here is an example of how to use a custom <a href="https://react-jsonschema-form.readthedocs.io/advanced-customization/#array-field-template">ArrayFieldTemplate</a> and <a href="https://react-jsonschema-form.readthedocs.io/advanced-customization/#error-list-template">ErrorListTemplate</a> in the theme object:</p>
+<pre><code class="jsx">function MyArrayFieldTemplate(props) {
+  return (
+    &lt;div&gt;
+      {props.items.map(element =&gt; element.children)}
+      {props.canAdd &amp;&amp; &lt;button type=&quot;button&quot; onClick={props.onAddClick}&gt;&lt;/button&gt;}
+    &lt;/div&gt;
+  );
+}
+
+function MyErrorListTemplate(props) {
+  const {errors} = props;
+  return (
+    &lt;ul&gt;
+      {errors.map(error =&gt; (
+          &lt;li key={error.stack}&gt;
+            {error.stack}
+          &lt;/li&gt;
+        ))}
+    &lt;/ul&gt;
+  );
+}
+
+const ThemeObject = {
+    ArrayFieldTemplate: MyArrayFieldTemplate, 
+    ErrorList: MyErrorListTemplate,
+    widgets: myWidgets
+};
+
+export default ThemeObject;
+</code></pre>
+
+<h2 id="overriding-other-form-props">Overriding other Form props<a class="headerlink" href="index.html#overriding-other-form-props" title="Permanent link">&para;</a></h2>
+<p>Just as the theme can override <strong>widgets</strong>, <strong>fields</strong>, any of the field templates, and set default values to properties like <strong>showErrorList</strong>, you can do the same with the instance of the withTheme() Form component.</p>
+<pre><code class="jsx">const ThemeObject = {
+    ArrayFieldTemplate: MyArrayFieldTemplate, 
+    fields: myFields,
+    showErrorList: false,
+    widgets: myWidgets
+};
+</code></pre>
+
+<p>Thus, the user has higher priority than the withTheme HOC, and the theme has higher priority than the default values of the rjsf Form component (<strong>User</strong> &gt; <strong>Theme</strong> &gt; <strong>Defaults</strong>).</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../internals/index.html" class="btn btn-neutral float-right" title="Other Internals">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../custom-templates/index.html" class="btn btn-neutral" title="Custom Templates"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../custom-templates/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../internals/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../main.js" defer></script>
+      <script src="../../readthedocs-data.js" defer></script>
+      <script src="https://assets.readthedocs.org/static/core/js/readthedocs-doc-embed.js" defer></script>
+      <script src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

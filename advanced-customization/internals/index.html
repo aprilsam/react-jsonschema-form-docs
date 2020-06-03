@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Other Internals - react-jsonschema-form documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="https://assets.readthedocs.org/static/css/badge_only.css" rel="stylesheet" />
+  <link href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Other Internals";
+    var mkdocs_page_input_path = "advanced-customization/internals.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../index.html" class="icon icon-home"> react-jsonschema-form documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="https://react-jsonschema-form.readthedocs.io/en/latest/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../index.html">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quickstart</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">JSON schema</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/single/index.html">Single fields</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/objects/index.html">Objects</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/arrays/index.html">Arrays</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/definitions/index.html">Definitions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/dependencies/index.html">Dependencies</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/oneof/index.html">oneOf / anyOf / allOf</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Usage</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/widgets/index.html">Widgets</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/themes/index.html">Themes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/validation/index.html">Validation</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Advanced Customization</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../custom-widgets-fields/index.html">Custom Widgets and Fields</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../custom-templates/index.html">Custom Templates</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../custom-themes/index.html">Custom Themes</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="index.html">Other Internals</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="index.html#json-schema-supporting-status">JSON Schema supporting status</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="index.html#handling-of-schema-defaults">Handling of schema defaults</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="index.html#merging-of-defaults-into-the-form-data">Merging of defaults into the form data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="index.html#merging-of-defaults-within-the-schema">Merging of defaults within the schema</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="index.html#custom-array-field-buttons">Custom array field buttons</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="index.html#submit-form-programmatically">Submit form programmatically</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../contributing/index.html">Contributing</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Reference</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../api-reference/uiSchema/index.html">uiSchema</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../api-reference/form-props/index.html">&lt;Form /&gt; props</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">react-jsonschema-form documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Advanced Customization &raquo;</li>
+        
+      
+    
+    <li>Other Internals</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="internals">Internals<a class="headerlink" href="index.html#internals" title="Permanent link">&para;</a></h1>
+<p>Miscellaneous internals of react-jsonschema-form are listed here.</p>
+<h2 id="json-schema-supporting-status">JSON Schema supporting status<a class="headerlink" href="index.html#json-schema-supporting-status" title="Permanent link">&para;</a></h2>
+<p>This component follows <a href="http://json-schema.org/documentation.html">JSON Schema</a> specs. We currently support JSON Schema-07 by default, but we also support other JSON schema versions through the <a href="https://react-jsonschema-form.readthedocs.io/en/latest/validation/#custom-schema-validation">custom schema validation</a> feature. Due to the limitation of form widgets, there are some exceptions as follows:</p>
+<ul>
+<li>
+<p><code>additionalItems</code> keyword for arrays</p>
+<p>This keyword works when <code>items</code> is an array. <code>additionalItems: true</code> is not supported because there's no widget to represent an item of any type. In this case it will be treated as no additional items allowed. <code>additionalItems</code> being a valid schema is supported.</p>
+</li>
+<li>
+<p><code>anyOf</code>, <code>allOf</code>, and <code>oneOf</code>, or multiple <code>types</code> (i.e. <code>"type": ["string", "array"]</code>)</p>
+<p>The <code>anyOf</code> and <code>oneOf</code> keywords are supported; however, properties declared inside the <code>anyOf/oneOf</code> should not overlap with properties "outside" of the <code>anyOf/oneOf</code>.</p>
+<p>You can also use <code>oneOf</code> with <a href="https://react-jsonschema-form.readthedocs.io/en/latest/advanced-customization/internals/dependencies.md#schema-dependencies">schema dependencies</a> to dynamically add schema properties based on input data.</p>
+<p>The <code>allOf</code> keyword is supported; it uses <a href="https://github.com/mokkabonna/json-schema-merge-allof">json-schema-merge-allof</a> to merge subschemas to render the final combined schema in the form. When these subschemas are incompatible, though (or if the library has an error merging it), the <code>allOf</code> keyword is dropped from the schema. </p>
+</li>
+<li>
+<p><code>"additionalProperties":false</code> produces incorrect schemas when used with <a href="index.html#schema-dependencies">schema dependencies</a>. This library does not remove extra properties, which causes validation to fail. It is recommended to avoid setting <code>"additionalProperties":false</code> when you use schema dependencies. See <a href="https://github.com/rjsf-team/react-jsonschema-form/issues/848">#848</a> <a href="https://github.com/mozilla-services/rjsf-team/issues/902">#902</a> <a href="https://github.com/mozilla-services/rjsf-team/issues/992">#992</a></p>
+</li>
+</ul>
+<h2 id="handling-of-schema-defaults">Handling of schema defaults<a class="headerlink" href="index.html#handling-of-schema-defaults" title="Permanent link">&para;</a></h2>
+<p>This library automatically fills default values defined in the <a href="http://json-schema.org/documentation.html">JSON Schema</a> as initial values in your form. This also works for complex structures in the schema. If a field has a default defined, it should always appear as default value in form. This also works when using <a href="index.html#schema-dependencies">schema dependencies</a>.</p>
+<p>Since there is a complex interaction between any supplied original form data and any injected defaults, this library tries to do the injection in a way which keeps the original intention of the original form data.</p>
+<p>Check out the defaults example on the <a href="https://rjsf-team.github.io/react-jsonschema-form/">live playground</a> to see this in action.</p>
+<h3 id="merging-of-defaults-into-the-form-data">Merging of defaults into the form data<a class="headerlink" href="index.html#merging-of-defaults-into-the-form-data" title="Permanent link">&para;</a></h3>
+<p>There are three different cases which need to be considered for the merging. Objects, arrays and scalar values. This library always deeply merges any defaults with the existing form data for objects.</p>
+<p>This are the rules which are used when injecting the defaults: </p>
+<ul>
+<li>When the is a scalar in the form data, nothing is changed. </li>
+<li>When the value is <code>undefined</code> in the form data, the default is created in the form data.</li>
+<li>When the value is an object in the form data, the defaults are deeply merged into the form data, using the rules defined here for the deep merge.</li>
+<li>Then the value is an array in the form data, defaults are only injected in existing array items. No new array items will be created, even if the schema has minItems or additional items defined.</li>
+</ul>
+<h3 id="merging-of-defaults-within-the-schema">Merging of defaults within the schema<a class="headerlink" href="index.html#merging-of-defaults-within-the-schema" title="Permanent link">&para;</a></h3>
+<p>In the schema itself, defaults of parent elements are propagated into children. So when you have a schema which defines a deeply nested object as default, these defaults will be applied to children of the current node. This also merges objects defined at different levels together with the "deeper" not having precedence. If the parent node defines properties, which are not defined in the child, they will be merged so that the default for the child will be the merged defaults of parent and child.</p>
+<p>For arrays this is not the case. Defining an array, when a parent also defines an array, will be overwritten. This is only true when arrays are used in the same level, for objects within these arrays, they will be deeply merged again.</p>
+<h2 id="custom-array-field-buttons">Custom array field buttons<a class="headerlink" href="index.html#custom-array-field-buttons" title="Permanent link">&para;</a></h2>
+<p>The <code>ArrayField</code> component provides a UI to add, remove and reorder array items, and these buttons use <a href="http://getbootstrap.com/components/#glyphicons">Bootstrap glyphicons</a>. If you don't use glyphicons but still want to provide your own icons or texts for these buttons, you can easily do so using CSS:</p>
+<pre><code class="css">i.glyphicon { display: none; }
+.btn-add::after { content: 'Add'; }
+.array-item-move-up::after { content: 'Move Up'; }
+.array-item-move-down::after { content: 'Move Down'; }
+.array-item-remove::after { content: 'Remove'; }
+</code></pre>
+
+<h2 id="submit-form-programmatically">Submit form programmatically<a class="headerlink" href="index.html#submit-form-programmatically" title="Permanent link">&para;</a></h2>
+<p>You can use the reference to get your <code>Form</code> component and call the <code>submit</code> method to submit the form programmatically without a submit button.
+This method will dispatch the <code>submit</code> event of the form, and the function, that is passed to <code>onSubmit</code> props, will be called.</p>
+<pre><code class="jsx">const onSubmit = ({formData}) =&gt; console.log(&quot;Data submitted: &quot;,  formData);
+let yourForm;
+
+const schema = {
+    type: &quot;string&quot;
+};
+
+render((
+  &lt;Form schema={schema}
+        onSubmit={onSubmit} ref={(form) =&gt; {yourForm = form;}}/&gt;
+), document.getElementById(&quot;app&quot;));
+
+yourForm.submit();
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../contributing/index.html" class="btn btn-neutral float-right" title="Contributing">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../custom-themes/index.html" class="btn btn-neutral" title="Custom Themes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../custom-themes/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../contributing/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../main.js" defer></script>
+      <script src="../../readthedocs-data.js" defer></script>
+      <script src="https://assets.readthedocs.org/static/core/js/readthedocs-doc-embed.js" defer></script>
+      <script src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

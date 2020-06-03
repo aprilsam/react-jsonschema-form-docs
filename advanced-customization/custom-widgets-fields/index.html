@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Custom Widgets and Fields - react-jsonschema-form documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="https://assets.readthedocs.org/static/css/badge_only.css" rel="stylesheet" />
+  <link href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Custom Widgets and Fields";
+    var mkdocs_page_input_path = "advanced-customization/custom-widgets-fields.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../index.html" class="icon icon-home"> react-jsonschema-form documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="https://react-jsonschema-form.readthedocs.io/en/latest/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../index.html">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quickstart</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">JSON schema</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/single/index.html">Single fields</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/objects/index.html">Objects</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/arrays/index.html">Arrays</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/definitions/index.html">Definitions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/dependencies/index.html">Dependencies</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/oneof/index.html">oneOf / anyOf / allOf</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Usage</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/widgets/index.html">Widgets</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/themes/index.html">Themes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usage/validation/index.html">Validation</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Advanced Customization</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="index.html">Custom Widgets and Fields</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="index.html#customizing-the-default-fields-and-widgets">Customizing the default fields and widgets</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="index.html#adding-your-own-custom-widgets">Adding your own custom widgets</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="index.html#custom-component-registration">Custom component registration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="index.html#custom-widget-options">Custom widget options</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="index.html#customizing-widgets-text-input">Customizing widgets text input</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="index.html#custom-field-components">Custom field components</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="index.html#field-props">Field props</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="index.html#the-registry-object">The registry object</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="index.html#custom-schemafield">Custom SchemaField</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../custom-templates/index.html">Custom Templates</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../custom-themes/index.html">Custom Themes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../internals/index.html">Other Internals</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../contributing/index.html">Contributing</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Reference</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../api-reference/uiSchema/index.html">uiSchema</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../api-reference/form-props/index.html">&lt;Form /&gt; props</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">react-jsonschema-form documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Advanced Customization &raquo;</li>
+        
+      
+    
+    <li>Custom Widgets and Fields</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="custom-widgets-and-fields">Custom Widgets and Fields<a class="headerlink" href="index.html#custom-widgets-and-fields" title="Permanent link">&para;</a></h1>
+<p>The API allows to specify your own custom <em>widget</em> and <em>field</em> components:</p>
+<ul>
+<li>A <em>widget</em> represents a HTML tag for the user to enter data, eg. <code>input</code>, <code>select</code>, etc.</li>
+<li>A <em>field</em> usually wraps one or more widgets and most often handles internal field state; think of a field as a form row, including the labels.</li>
+</ul>
+<h2 id="customizing-the-default-fields-and-widgets">Customizing the default fields and widgets<a class="headerlink" href="index.html#customizing-the-default-fields-and-widgets" title="Permanent link">&para;</a></h2>
+<p>You can override any default field and widget, including the internal widgets like the <code>CheckboxWidget</code> that <code>ObjectField</code> renders for boolean values. You can override any field and widget just by providing the customized fields/widgets in the <code>fields</code> and <code>widgets</code> props:</p>
+<pre><code class="jsx">const schema = {
+  type: &quot;boolean&quot;,
+  default: true
+};
+
+const uiSchema = {
+  &quot;ui:widget&quot;: &quot;checkbox&quot;
+};
+
+const CustomCheckbox = function(props) {
+  return (
+    &lt;button id=&quot;custom&quot; className={props.value ? &quot;checked&quot; : &quot;unchecked&quot;} onClick={() =&gt; props.onChange(!props.value)}&gt;
+        {String(props.value)}
+    &lt;/button&gt;
+  );
+};
+
+const widgets = {
+  CheckboxWidget: CustomCheckbox
+};
+
+render((
+  &lt;Form schema={schema}
+        uiSchema={uiSchema}
+        widgets={widgets} /&gt;
+), document.getElementById(&quot;app&quot;));
+</code></pre>
+
+<p>This allows you to create a reusable customized form class with your custom fields and widgets:</p>
+<pre><code class="jsx">const customFields = {StringField: CustomString};
+const customWidgets = {CheckboxWidget: CustomCheckbox};
+
+function MyForm(props) {
+  return &lt;Form fields={customFields} widgets={customWidgets} {...props} /&gt;;
+}
+</code></pre>
+
+<p>The default fields you can override are:</p>
+<ul>
+<li><code>ArrayField</code></li>
+<li><code>BooleanField</code></li>
+<li><code>DescriptionField</code></li>
+<li><code>MultiSchemaField</code></li>
+<li><code>NullField</code></li>
+<li><code>NumberField</code></li>
+<li><code>ObjectField</code></li>
+<li><code>SchemaField</code></li>
+<li><code>StringField</code></li>
+<li><code>TitleField</code></li>
+<li><code>UnsupportedField</code></li>
+</ul>
+<p>The default widgets you can override are:</p>
+<ul>
+<li><code>AltDateTimeWidget</code></li>
+<li><code>AltDateWidget</code></li>
+<li><code>CheckboxesWidget</code></li>
+<li><code>CheckboxWidget</code></li>
+<li><code>ColorWidget</code></li>
+<li><code>DateTimeWidget</code></li>
+<li><code>DateWidget</code></li>
+<li><code>EmailWidget</code></li>
+<li><code>FileWidget</code></li>
+<li><code>HiddenWidget</code></li>
+<li><code>PasswordWidget</code></li>
+<li><code>RadioWidget</code></li>
+<li><code>RangeWidget</code></li>
+<li><code>SelectWidget</code></li>
+<li><code>TextareaWidget</code></li>
+<li><code>TextWidget</code></li>
+<li><code>UpDownWidget</code></li>
+<li><code>URLWidget</code></li>
+</ul>
+<h2 id="adding-your-own-custom-widgets">Adding your own custom widgets<a class="headerlink" href="index.html#adding-your-own-custom-widgets" title="Permanent link">&para;</a></h2>
+<p>You can provide your own custom widgets to a uiSchema for the following json data types:</p>
+<ul>
+<li><code>string</code></li>
+<li><code>number</code></li>
+<li><code>integer</code></li>
+<li><code>boolean</code></li>
+</ul>
+<pre><code class="jsx">const schema = {
+  type: &quot;string&quot;
+};
+
+const uiSchema = {
+  &quot;ui:widget&quot;: (props) =&gt; {
+    return (
+      &lt;input type=&quot;text&quot;
+        className=&quot;custom&quot;
+        value={props.value}
+        required={props.required}
+        onChange={(event) =&gt; props.onChange(event.target.value)} /&gt;
+    );
+  }
+};
+
+render((
+  &lt;Form schema={schema}
+        uiSchema={uiSchema} /&gt;,
+), document.getElementById(&quot;app&quot;));
+</code></pre>
+
+<p>The following props are passed to custom widget components:</p>
+<ul>
+<li><code>id</code>: The generated id for this field;</li>
+<li><code>schema</code>: The JSONSchema subschema object for this field;</li>
+<li><code>value</code>: The current value for this field;</li>
+<li><code>placeholder</code>: the placeholder for the field, if any;</li>
+<li><code>required</code>: The required status of this field;</li>
+<li><code>disabled</code>: <code>true</code> if the widget is disabled;</li>
+<li><code>readonly</code>: <code>true</code> if the widget is read-only;</li>
+<li><code>autofocus</code>: <code>true</code> if the widget should autofocus;</li>
+<li><code>onChange</code>: The value change event handler; call it with the new value every time it changes;</li>
+<li><code>onKeyChange</code>: The key change event handler (only called for fields with <code>additionalProperties</code>); pass the new value every time it changes;</li>
+<li><code>onBlur</code>: The input blur event handler; call it with the the widget id and value;</li>
+<li><code>onFocus</code>: The input focus event handler; call it with the the widget id and value;</li>
+<li><code>options</code>: A map of options passed as a prop to the component (see <a href="index.html#custom-widget-options">Custom widget options</a>).</li>
+<li><code>formContext</code>: The <code>formContext</code> object that you passed to Form.</li>
+<li><code>rawErrors</code>: An array of strings listing all generated error messages from encountered errors for this widget.</li>
+</ul>
+<blockquote>
+<p>Note: Prior to v0.35.0, the <code>options</code> prop contained the list of options (<code>label</code> and <code>value</code>) for <code>enum</code> fields. Since v0.35.0, it now exposes this list as the <code>enumOptions</code> property within the <code>options</code> object.</p>
+</blockquote>
+<h3 id="custom-component-registration">Custom component registration<a class="headerlink" href="index.html#custom-component-registration" title="Permanent link">&para;</a></h3>
+<p>Alternatively, you can register them all at once by passing the <code>widgets</code> prop to the <code>Form</code> component, and reference their identifier from the <code>uiSchema</code>:</p>
+<pre><code class="jsx">const MyCustomWidget = (props) =&gt; {
+  return (
+    &lt;input type=&quot;text&quot;
+      className=&quot;custom&quot;
+      value={props.value}
+      required={props.required}
+      onChange={(event) =&gt; props.onChange(event.target.value)} /&gt;
+  );
+};
+
+const widgets = {
+  myCustomWidget: MyCustomWidget
+};
+
+const schema = {
+  type: &quot;string&quot;
+};
+
+const uiSchema = {
+  &quot;ui:widget&quot;: &quot;myCustomWidget&quot;
+}
+
+render((
+  &lt;Form
+    schema={schema}
+    uiSchema={uiSchema}
+    widgets={widgets} /&gt;
+), document.getElementById(&quot;app&quot;));
+</code></pre>
+
+<p>This is useful if you expose the <code>uiSchema</code> as pure JSON, which can't carry functions.</p>
+<h3 id="custom-widget-options">Custom widget options<a class="headerlink" href="index.html#custom-widget-options" title="Permanent link">&para;</a></h3>
+<p>If you need to pass options to your custom widget, you can add a <code>ui:options</code> object containing those properties. If the widget has <code>defaultProps</code>, the options will be merged with the (optional) options object from <code>defaultProps</code>:</p>
+<pre><code class="jsx">const schema = {
+  type: &quot;string&quot;
+};
+
+function MyCustomWidget(props) {
+  const {options} = props;
+  const {color, backgroundColor} = options;
+  return &lt;input style={{color, backgroundColor}} /&gt;;
+}
+
+MyCustomWidget.defaultProps = {
+  options: {
+    color: &quot;red&quot;
+  }
+};
+
+const uiSchema = {
+  &quot;ui:widget&quot;: MyCustomWidget,
+  &quot;ui:options&quot;: {
+    backgroundColor: &quot;yellow&quot;
+  }
+};
+
+// renders red on yellow input
+render((
+  &lt;Form schema={schema}
+        uiSchema={uiSchema} /&gt;
+), document.getElementById(&quot;app&quot;));
+</code></pre>
+
+<blockquote>
+<p>Note: This also applies to <a href="index.html#custom-component-registration">registered custom components</a>.</p>
+<p>Note: Since v0.41.0, the <code>ui:widget</code> object API, where a widget and options were specified with <code>"ui:widget": {component, options}</code> shape, is deprecated. It will be removed in a future release.</p>
+</blockquote>
+<h3 id="customizing-widgets-text-input">Customizing widgets text input<a class="headerlink" href="index.html#customizing-widgets-text-input" title="Permanent link">&para;</a></h3>
+<p>All the widgets that render a text input use the <code>BaseInput</code> component internally. If you need to customize all text inputs without customizing all widgets individually, you can provide a <code>BaseInput</code> component in the <code>widgets</code> property of <code>Form</code> (see <a href="index.html#custom-component-registration">Custom component registration</a>).</p>
+<h2 id="custom-field-components">Custom field components<a class="headerlink" href="index.html#custom-field-components" title="Permanent link">&para;</a></h2>
+<p>You can provide your own field components to a uiSchema for basically any json schema data type, by specifying a <code>ui:field</code> property.</p>
+<p>For example, let's create and register a dumb <code>geo</code> component handling a <em>latitude</em> and a <em>longitude</em>:</p>
+<pre><code class="jsx">const schema = {
+  type: &quot;object&quot;,
+  required: [&quot;lat&quot;, &quot;lon&quot;],
+  properties: {
+    lat: {type: &quot;number&quot;},
+    lon: {type: &quot;number&quot;}
+  }
+};
+
+// Define a custom component for handling the root position object
+class GeoPosition extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {...props.formData};
+  }
+
+  onChange(name) {
+    return (event) =&gt; {
+      this.setState({
+        [name]: parseFloat(event.target.value)
+      }, () =&gt; this.props.onChange(this.state));
+    };
+  }
+
+  render() {
+    const {lat, lon} = this.state;
+    return (
+      &lt;div&gt;
+        &lt;input type=&quot;number&quot; value={lat} onChange={this.onChange(&quot;lat&quot;)} /&gt;
+        &lt;input type=&quot;number&quot; value={lon} onChange={this.onChange(&quot;lon&quot;)} /&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+// Define the custom field component to use for the root object
+const uiSchema = {&quot;ui:field&quot;: &quot;geo&quot;};
+
+// Define the custom field components to register; here our &quot;geo&quot;
+// custom field component
+const fields = {geo: GeoPosition};
+
+// Render the form with all the properties we just defined passed
+// as props
+render((
+  &lt;Form
+    schema={schema}
+    uiSchema={uiSchema}
+    fields={fields} /&gt;
+), document.getElementById(&quot;app&quot;));
+</code></pre>
+
+<blockquote>
+<p>Note: Registered fields can be reused across the entire schema.</p>
+</blockquote>
+<h3 id="field-props">Field props<a class="headerlink" href="index.html#field-props" title="Permanent link">&para;</a></h3>
+<p>A field component will always be passed the following props:</p>
+<ul>
+<li><code>schema</code>: The JSON schema for this field;</li>
+<li><code>uiSchema</code>: The <a href="index.html#the-uischema-object">uiSchema</a> for this field;</li>
+<li><code>idSchema</code>: The tree of unique ids for every child field;</li>
+<li><code>formData</code>: The data for this field;</li>
+<li><code>errorSchema</code>: The tree of errors for this field and its children;</li>
+<li><code>registry</code>: A <a href="index.html#the-registry-object">registry</a> object (read next).</li>
+<li><code>formContext</code>: A <a href="index.html#the-formcontext-object">formContext</a> object (read next).</li>
+</ul>
+<h2 id="the-registry-object">The <code>registry</code> object<a class="headerlink" href="index.html#the-registry-object" title="Permanent link">&para;</a></h2>
+<p>The <code>registry</code> is an object containing the registered custom fields and widgets as well as the root schema definitions.</p>
+<ul>
+<li><code>fields</code>: The <a href="index.html#custom-field-components">custom registered fields</a>. By default this object contains the standard <code>SchemaField</code>, <code>TitleField</code> and <code>DescriptionField</code> components;</li>
+<li><code>widgets</code>: The <a href="index.html#custom-widget-components">custom registered widgets</a>, if any;</li>
+<li><code>rootSchema</code>: The root schema, which can contain referenced <a href="index.html#schema-definitions-and-references">definitions</a>;</li>
+<li><code>formContext</code>: The <a href="index.html#the-formcontext-object">formContext</a> object;</li>
+<li><code>definitions</code> (deprecated since v2): Equal to <code>rootSchema.definitions</code>.</li>
+</ul>
+<p>The registry is passed down the component tree, so you can access it from your custom field and <code>SchemaField</code> components.</p>
+<h3 id="custom-schemafield">Custom SchemaField<a class="headerlink" href="index.html#custom-schemafield" title="Permanent link">&para;</a></h3>
+<p><strong>Warning:</strong> This is a powerful feature as you can override the whole form behavior and easily mess it up. Handle with care.</p>
+<p>You can provide your own implementation of the <code>SchemaField</code> base React component for rendering any JSONSchema field type, including objects and arrays. This is useful when you want to augment a given field type with supplementary powers.</p>
+<p>To proceed so, pass a <code>fields</code> object having a <code>SchemaField</code> property to your <code>Form</code> component; here's an example:</p>
+<pre><code class="jsx">
+const CustomSchemaField = function(props) {
+  return (
+    &lt;div id=&quot;custom&quot;&gt;
+      &lt;p&gt;Yeah, I'm pretty dumb.&lt;/p&gt;
+      &lt;div&gt;My props are: {JSON.stringify(props)}&lt;/div&gt;
+    &lt;/div&gt;
+  );
+};
+
+const fields = {
+  SchemaField: CustomSchemaField
+};
+
+const schema = {
+  type: &quot;string&quot;
+};
+
+render((
+  &lt;Form schema={schema}
+        fields={fields} /&gt;
+), document.getElementById(&quot;app&quot;));
+</code></pre>
+
+<p>If you're curious how this could ever be useful, have a look at the <a href="https://github.com/Kinto/formbuilder">Kinto formbuilder</a> repository to see how it's used to provide editing capabilities to any form field.</p>
+<p>Props passed to a custom SchemaField are the same as <a href="index.html#field-props">the ones passed to a custom field</a>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../custom-templates/index.html" class="btn btn-neutral float-right" title="Custom Templates">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../usage/validation/index.html" class="btn btn-neutral" title="Validation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../usage/validation/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../custom-templates/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../main.js" defer></script>
+      <script src="../../readthedocs-data.js" defer></script>
+      <script src="https://assets.readthedocs.org/static/core/js/readthedocs-doc-embed.js" defer></script>
+      <script src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

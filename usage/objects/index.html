@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Objects - react-jsonschema-form documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="https://assets.readthedocs.org/static/css/badge_only.css" rel="stylesheet" />
+  <link href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Objects";
+    var mkdocs_page_input_path = "usage/objects.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../index.html" class="icon icon-home"> react-jsonschema-form documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="https://react-jsonschema-form.readthedocs.io/en/latest/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../index.html">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quickstart</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">JSON schema</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../single/index.html">Single fields</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="index.html">Objects</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="index.html#object-properties">Object properties</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="index.html#required-properties">Required properties</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="index.html#specifying-property-order">Specifying property order</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="index.html#additional-properties">Additional properties</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="index.html#expandable-option">expandable option</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../arrays/index.html">Arrays</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../definitions/index.html">Definitions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../dependencies/index.html">Dependencies</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../oneof/index.html">oneOf / anyOf / allOf</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Usage</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../widgets/index.html">Widgets</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../themes/index.html">Themes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../validation/index.html">Validation</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Advanced Customization</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../advanced-customization/custom-widgets-fields/index.html">Custom Widgets and Fields</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../advanced-customization/custom-templates/index.html">Custom Templates</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../advanced-customization/custom-themes/index.html">Custom Themes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../advanced-customization/internals/index.html">Other Internals</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../contributing/index.html">Contributing</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Reference</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../api-reference/uiSchema/index.html">uiSchema</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../api-reference/form-props/index.html">&lt;Form /&gt; props</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">react-jsonschema-form documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>JSON schema &raquo;</li>
+        
+      
+    
+    <li>Objects</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="objects">Objects<a class="headerlink" href="index.html#objects" title="Permanent link">&para;</a></h1>
+<h2 id="object-properties">Object properties<a class="headerlink" href="index.html#object-properties" title="Permanent link">&para;</a></h2>
+<p>Objects are defined with a type equal to <code>object</code> and properties specified in the <code>properties</code> keyword.</p>
+<pre><code class="jsx">const schema = {
+  &quot;title&quot;: &quot;My title&quot;,
+  &quot;description&quot;: &quot;My description&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;name&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;age&quot;: {
+      &quot;type&quot;: &quot;number&quot;
+    }
+  }
+};
+
+render((
+  &lt;Form schema={schema} /&gt;
+), document.getElementById(&quot;app&quot;));
+</code></pre>
+
+<h2 id="required-properties">Required properties<a class="headerlink" href="index.html#required-properties" title="Permanent link">&para;</a></h2>
+<p>You can specify which properties are required using the <code>required</code> attribute:</p>
+<pre><code class="jsx">const schema = {
+  &quot;title&quot;: &quot;My title&quot;,
+  &quot;description&quot;: &quot;My description&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;name&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;age&quot;: {
+      &quot;type&quot;: &quot;number&quot;
+    }
+  },
+  &quot;required&quot;: [&quot;name&quot;]
+};
+
+render((
+  &lt;Form schema={schema} /&gt;
+), document.getElementById(&quot;app&quot;));
+</code></pre>
+
+<h2 id="specifying-property-order">Specifying property order<a class="headerlink" href="index.html#specifying-property-order" title="Permanent link">&para;</a></h2>
+<p>Since the order of object properties in Javascript and JSON is not guaranteed, the <code>uiSchema</code> object spec allows you to define the order in which properties are rendered using the <code>ui:order</code> property:</p>
+<pre><code class="jsx">const schema = {
+  type: &quot;object&quot;,
+  properties: {
+    foo: {type: &quot;string&quot;},
+    bar: {type: &quot;string&quot;}
+  }
+};
+
+const uiSchema = {
+  &quot;ui:order&quot;: [&quot;bar&quot;, &quot;foo&quot;]
+};
+
+render((
+  &lt;Form schema={schema}
+        uiSchema={uiSchema} /&gt;
+), document.getElementById(&quot;app&quot;));
+</code></pre>
+
+<p>If a guaranteed fixed order is only important for some fields, you can insert a wildcard <code>"*"</code> item in your <code>ui:order</code> definition. All fields that are not referenced explicitly anywhere in the list will be rendered at that point:</p>
+<pre><code class="js">const uiSchema = {
+  &quot;ui:order&quot;: [&quot;bar&quot;, &quot;*&quot;]
+};
+</code></pre>
+
+<h2 id="additional-properties">Additional properties<a class="headerlink" href="index.html#additional-properties" title="Permanent link">&para;</a></h2>
+<p>The <code>additionalProperties</code> keyword allows the user to add properties with arbitrary key names. Set this keyword equal to a schema object:</p>
+<pre><code class="jsx">const schema = {
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;name&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    }
+  },
+  &quot;additionalProperties&quot;: {
+    &quot;type&quot;: &quot;number&quot;,
+    &quot;enum&quot;: [1, 2, 3]
+  }
+};
+
+render((
+  &lt;Form schema={schema} /&gt;
+), document.getElementById(&quot;app&quot;));
+</code></pre>
+
+<p>In this way, an add button for new properties is shown by default.</p>
+<p>You can also define <code>uiSchema</code> options for <code>additionalProperties</code> by setting the <code>additionalProperties</code> attribute in the <code>uiSchema</code>.</p>
+<h3 id="expandable-option"><code>expandable</code> option<a class="headerlink" href="index.html#expandable-option" title="Permanent link">&para;</a></h3>
+<p>You can turn support for <code>additionalProperties</code> off with the <code>expandable</code> option in <code>uiSchema</code>:</p>
+<pre><code class="js">const uiSchema = {
+  &quot;ui:options&quot;:  {
+    expandable: false
+  }
+};
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../arrays/index.html" class="btn btn-neutral float-right" title="Arrays">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../single/index.html" class="btn btn-neutral" title="Single fields"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../single/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../arrays/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../main.js" defer></script>
+      <script src="../../readthedocs-data.js" defer></script>
+      <script src="https://assets.readthedocs.org/static/core/js/readthedocs-doc-embed.js" defer></script>
+      <script src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
